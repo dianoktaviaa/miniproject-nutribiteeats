@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Roboto, Arial, sans-serif;
+}
+
+body {
+  min-width: 100vh;
+  min-height: 100vh;
+}
+
+.hero-content {
+  font-family: "Yellowtail", cursive;
+  justify-content: start;
+  font-size: x-large;
+  color: #68a47f;
+}
+
+.search-content {
+  font-family: "Yellowtail", cursive;
+  font-size: x-large;
+  color: #68a47f;
+}
+
+.copyright {
+  text-align-last: center;
+}
