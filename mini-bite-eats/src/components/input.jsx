@@ -1,19 +1,38 @@
 import PropTypes from "prop-types";
 
-function Input({ value, onChange, placeholder }) {
+function Input({ placeholder, type, register, error, name, value, onChange }) {
   return (
-    <input
-      className="input input-bordered focus:outline-[#EFD372] focus:border-[#EFD372] h-11 w-full rounded mb-4"
-      type="text"
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-    />
+    <div className="w-full mb-4 h-16">
+      <input
+        className="input input-bordered focus:outline-[#EFD372] focus:border-[#EFD372] h-11 w-full rounded "
+        type={type}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        name={name}
+        {...(register
+          ? register(name, {
+              valueAsNumber: type === "number" ? true : false,
+            })
+          : {})}
+      />
+      {error && (
+        <label className="label">
+          <span className="break-words text-sm font-light text-red-800">
+            {error}
+          </span>
+        </label>
+      )}
+    </div>
   );
 }
 
 Input.propTypes = {
+  name: PropTypes.string,
   placeholder: PropTypes.string,
+  type: PropTypes.string,
+  register: PropTypes.func,
+  error: PropTypes.string,
   value: PropTypes.string,
   onChange: PropTypes.func,
 };

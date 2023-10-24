@@ -1,5 +1,6 @@
 import { Button } from "./button";
 import imageHeader from "../assets/hero_nutrisies.png";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -9,7 +10,9 @@ export default function Hero() {
         <h1 className="font-extrabold text-5xl pb-10">
           Check the nutrisies, and make better choices
         </h1>
-        <Button type="button" label="Explore Now" />
+        <Link to="/nutritions">
+          <Button type="button" label="Explore Now" />
+        </Link>
       </div>
       <div className="sm:hidden lg:block">
         <img className="w-[693px]" src={imageHeader} alt="Hero" />
