@@ -3,7 +3,7 @@ import { ButtonBlue } from "../components/button";
 import Footer from "../components/footer";
 import Copyrights from "../components/footer-copyrights";
 import Hero from "../components/hero";
-import Input from "../components/input";
+import { Input } from "../components/input";
 import Navbar from "../components/navbar";
 import { logFood } from "../utils/apis/nutrisies/search";
 

@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const API_KEY = "178f998348a99d8499adee8715d9e023";
-const API_ID = "7d68e422";
-const LOG_FOOD_URL = "https://trackapi.nutritionix.com/v2/natural/nutrients";
+const API_KEY = import.meta.env.VITE_API_KEY;
+const API_ID = import.meta.env.VITE_API_ID;
+const LOG_FOOD_URL = import.meta.env.VITE_LOG_FOOD_URL;
 
 export const logFood = (query) => {
   const requestBody = {

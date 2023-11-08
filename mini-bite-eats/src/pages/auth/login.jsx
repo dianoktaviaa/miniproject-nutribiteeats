@@ -1,4 +1,4 @@
-import Input from "../../components/input";
+import { Input } from "../../components/input";
 import Logo from "../../assets/login.jpg";
 import { Button } from "../../components/button";
 import { IoArrowForwardOutline } from "react-icons/io5";
