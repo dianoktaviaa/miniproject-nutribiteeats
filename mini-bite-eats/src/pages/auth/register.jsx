@@ -1,4 +1,4 @@
-import Input from "../../components/input";
+import { Input } from "../../components/input";
 import Logo from "../../assets/login.jpg";
 import { Button } from "../../components/button";
 import { Link, useNavigate } from "react-router-dom";

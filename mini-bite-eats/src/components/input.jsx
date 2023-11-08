@@ -37,4 +37,40 @@ Input.propTypes = {
   onChange: PropTypes.func,
 };
 
-export default Input;
+function SelectField({ label, id, options, error, value, onChange }) {
+  return (
+    <div className="form-control  pt-4">
+      <label htmlFor={id}>{label}</label>
+      <select
+        className="select select-bordered focus:outline-[#EFD372] focus:border-[#EFD372] h-11 w-full rounded"
+        id={id}
+        value={value}
+        onChange={onChange}
+      >
+        <option></option>
+        {options.map((option, index) => (
+          <option key={index} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+      {error && <span className="text-red-400">{error.message}</span>}
+    </div>
+  );
+}
+
+SelectField.propTypes = {
+  label: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  error: PropTypes.object,
+};
+
+export { Input, SelectField };
